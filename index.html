@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ван Гог</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Винсент Виллем Ван Гог</h1>
+    </div>
+
+    <div class="content">
+        <img class="left-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/VanGogh_1887_Selbstbildnis.jpg/800px-VanGogh_1887_Selbstbildnis.jpg" alt="Ван Гог">
+        <div class="text-block">
+            <p>Винсент Виллем Ван Гог (1853–1890) был голландским постимпрессионистическим художником, который считается одним из самых влиятельных художников всех времен. Его работы известны своей эмоциональной глубиной, яркими цветами и выразительными мазками. За десять с небольшим лет создал более 2 100 произведений, включая около 870 картин маслом. Среди них — портреты, автопортреты, пейзажи, натюрморты и панно с изображением оливковых деревьев, кипарисов, полей пшеницы и подсолнухов. При жизни был практически обойдён вниманием критиков. Ван Гог прожил 37 лет и не обрел при жизни известности.</p>
+        </div>
+    </div>    
+
+    <div class="carousel">
+        <button class="prev">&#10094;</button>
+        <img id="carousel-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/450px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg" alt="Картины Ван Гога">
+        <button class="next">&#10095;</button>
+    </div>
+
+    <div class="text-block">
+        <p>Некоторые из наиболее известных работ Ван Гога включают «Звёздную ночь», «Подсолнухи» и «Ирисы». Он также известен своими автопортретами и картинами природы.</p>
+    </div>
+
+    <blockquote class="quote">«Я мечтаю об искусстве, которое будет настолько мощным, чтобы тронуть сердца людей.» – Винсент Ван Гог</blockquote>
+
+    <div class="text-block">
+        <p>Узнайте больше о жизни и творчестве Винсента Ван Гога на <a href="https://www.vangoghmuseum.nl/en" target="_blank">официальном сайте музея Ван Гога</a>.</p>
+    </div>
+
+    <script>
+        const images = [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Vincent_Willem_van_Gogh_127.jpg/525px-Vincent_Willem_van_Gogh_127.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/VanGoghIrises2.jpg/525px-VanGoghIrises2.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Vincent_van_Gogh_-_The_Rocks_-_Google_Art_Project.jpg/1024px-Vincent_van_Gogh_-_The_Rocks_-_Google_Art_Project.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/d/d0/Pink_Roses_van_Gogh.jpg"
+        ];
+
+        let current = 0;
+        const imgElement = document.getElementById("carousel-image");
+
+        document.querySelector(".prev").addEventListener("click", () => {
+            current = (current - 1 + images.length) % images.length;
+            imgElement.src = images[current];
+        });
+
+        document.querySelector(".next").addEventListener("click", () => {
+            current = (current + 1) % images.length;
+            imgElement.src = images[current];
+        });
+    </script>
+</body>
+</html>
