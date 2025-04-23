@@ -1,0 +1,140 @@
+/* === Базовый стиль: только для ПК (от 769px и выше) === */
+body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9f/VanGogh-View_of_Arles_with_Irises.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px solid #ffa502;
+    margin-bottom: 30px;
+}
+
+.content {
+    margin: 20px;
+    overflow: auto;
+}
+
+.left-image {
+    float: left;
+    margin-right: 20px;
+    width: 150px;
+    height: auto;
+}
+
+.text-block {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.text-block p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.quote {
+    position: relative;
+    font-style: italic;
+    font-weight: bold;
+    margin: 50px;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.quote::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #c6a20084;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    max-width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border: 4px solid #ffa502;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+/* === Адаптив: только для экранов до 768px === */
+@media screen and (max-width: 768px) {
+    .left-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+        width: 90%;
+    }
+
+    .text-block {
+        padding: 15px;
+    }
+
+    .text-block p {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        padding: 10px;
+    }
+
+    .carousel img {
+        width: 100%;
+        max-width: 450px;
+        height: 450px;
+    }
+
+    .carousel button {
+        font-size: 24px;
+        padding: 8px;
+    }
+
+    .quote {
+        font-size: 16px;
+        margin: 20px 10px;
+    }
+}
